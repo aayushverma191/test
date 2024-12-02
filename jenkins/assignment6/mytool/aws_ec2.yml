@@ -1,0 +1,9 @@
+plugin: amazon.aws.aws_ec2
+regions:
+  - us-east-1
+filters:
+  tag:Name:
+    - ansible
+    - redhat
+hostvars:
+  ansible_user: "{{ 'ubuntu' if platform == 'ubuntu' else 'ec2-user' }}"
